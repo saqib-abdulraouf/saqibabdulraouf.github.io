@@ -34,6 +34,7 @@ body {
     background-color: var(--bg-light);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -54,6 +55,7 @@ body {
     right: auto;
     transform: translateX(-50%);
     border-radius: 50px;
+    max-width: calc(100vw - 20px);
 }
 
 body.light-mode .navbar {
@@ -186,7 +188,8 @@ body.light-mode .navbar {
     font-size: clamp(1.6rem, 7vw, 4rem);
     font-weight: 700;
     margin-bottom: 15px;
-    white-space: nowrap;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .hero-content h1 span {
@@ -829,6 +832,15 @@ body.light-mode .form-control-custom {
         width: 100%;
         text-align: center;
         margin-right: 0;
+    }
+
+    .hero-title-typing {
+        font-size: 1.8rem;
+        white-space: normal;
+        min-height: 3.2em;
+        /* Adjusted for 2 lines of typing */
+        line-height: 1.2;
+        margin-bottom: 20px;
     }
 }
 
