@@ -4,7 +4,7 @@ This is my personal portfolio website built using **HTML, CSS, and JavaScript**.
 It showcases my projects, skills, and provides an easy way to connect with me.
 
 ## 🚀 Live Demo
-https://YOUR-USERNAME.github.io/my-portfolio/
+ https://saqib-abdulraouf.github.io/saqibabdulraouf.github.io/
 
 ## 📌 Features
 - Responsive design (Mobile & Desktop)
