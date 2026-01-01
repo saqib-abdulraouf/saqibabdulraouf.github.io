@@ -256,8 +256,15 @@ body.light-mode .navbar {
     width: 100%;
 }
 
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
 .hero-buttons .btn-primary-custom {
-    margin-right: 20px;
+    margin-right: 0;
 }
 
 .hero-buttons .btn-outline-custom {
@@ -810,6 +817,18 @@ body.light-mode .form-control-custom {
 
     .navbar-brand {
         font-size: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn-primary-custom,
+    .hero-buttons .btn-outline-custom {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
     }
 }
 
