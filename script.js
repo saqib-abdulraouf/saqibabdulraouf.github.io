@@ -269,4 +269,66 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     }
+
+    // Google Login & Access Control Logic
+    const loginModalElement = document.getElementById('loginModal');
+    let loginModal;
+    if (loginModalElement) {
+        loginModal = new bootstrap.Modal(loginModalElement);
+    }
+
+    const googleLoginBtn = document.getElementById('googleLoginBtn');
+    let pendingUrl = null;
+
+    // Helper to check login status
+    const isLoggedIn = () => localStorage.getItem('isLoggedIn') === 'true';
+
+    // Handle restricted access links
+    const restrictedLinks = document.querySelectorAll('.restricted-access, .social-links-hero a, .social-links-contact a');
+
+    restrictedLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (!isLoggedIn()) {
+                e.preventDefault();
+                pendingUrl = link.href;
+                if (loginModal) loginModal.show();
+            }
+            // If logged in, let the default action happen
+        });
+    });
+
+    // Handle Google Login Simulation
+    if (googleLoginBtn) {
+        googleLoginBtn.addEventListener('click', () => {
+            // Loading state
+            const originalText = googleLoginBtn.innerHTML;
+            googleLoginBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Signing in...';
+            googleLoginBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                localStorage.setItem('isLoggedIn', 'true');
+
+                // Success State
+                googleLoginBtn.innerHTML = '<i class="fas fa-check me-2"></i> Signed In';
+                googleLoginBtn.classList.add('btn-success');
+
+                setTimeout(() => {
+                    if (loginModal) loginModal.hide();
+
+                    if (pendingUrl) {
+                        window.open(pendingUrl, '_blank');
+                        pendingUrl = null;
+                    }
+
+                    // Reset button style after a delay (optional cleanup)
+                    setTimeout(() => {
+                        googleLoginBtn.innerHTML = originalText;
+                        googleLoginBtn.disabled = false;
+                        googleLoginBtn.classList.remove('btn-success');
+                    }, 500);
+                }, 800);
+            }, 1500);
+        });
+    }
 });

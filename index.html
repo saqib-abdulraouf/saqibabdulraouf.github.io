@@ -28,7 +28,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav mx-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
@@ -36,13 +36,11 @@
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()"
-                            aria-label="Toggle Dark Mode">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </li>
                 </ul>
+                <button class="theme-toggle ms-lg-3" id="theme-toggle" onclick="toggleTheme()"
+                    aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -62,7 +60,8 @@
                             automating workflows with Agentic AI.
                         </p>
                         <div class="hero-buttons">
-                            <a href="assets/Saqib_Abdul_Raouf_CV.pdf" download class="btn-primary-custom">
+                            <a href="assets/Saqib_Abdul_Raouf_CV.pdf" download
+                                class="btn-primary-custom restricted-access">
                                 <i class="fas fa-download me-2"></i> Download CV
                             </a>
                             <a href="#contact" class="btn-outline-custom">Let's Talk</a>
@@ -525,6 +524,27 @@
                 </div>
                 <div class="modal-footer border-0">
                     <button type="button" class="btn-primary-custom px-4 py-2" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static"
+        data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content custom-modal-content login-modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="mb-4">
+                        <i class="fas fa-lock fa-3x text-primary mb-3"></i>
+                        <h3 class="fw-bold">Access Restricted</h3>
+                        <p class="text-muted">Please sign in with Google to continue.</p>
+                    </div>
+                    <button class="btn btn-google-login w-100 py-2 mb-3" id="googleLoginBtn">
+                        <i class="fab fa-google me-2"></i> Sign in with Google
+                    </button>
+                    <button class="btn btn-link text-muted text-decoration-none btn-sm"
+                        data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>
